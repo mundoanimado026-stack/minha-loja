@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Loja de Afiliados</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #0077cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #005fa3;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .search-bar {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      width: 60%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .produtos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 250px;
+      margin: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .card a {
+      display: inline-block;
+      background: #0077cc;
+      color: white;
+      padding: 10px 15px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .card a:hover {
+      background: #005fa3;
+    }
+
+    footer {
+      background: #0077cc;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Minha Loja de Afiliados</h1>
+    <p>Ofertas incríveis do Mercado Livre!</p>
+  </header>
+
+  <nav>
+    <a href="#">Eletrônicos</a>
+    <a href="#">Moda</a>
+    <a href="#">Casa</a>
+    <a href="#">Promoções</a>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Buscar produtos...">
+  </div>
+
+  <section class="produtos" id="produtos">
+    <!-- Produto 1 -->
+    <div class="card">
+      <img src="URL_DA_IMAGEM" alt="Produto 1">
+      <h3>Nome do Produto</h3>
+      <p>Descrição breve do produto</p>
+      <a href="SEU_LINK_AFILIADO" target="_blank">Comprar Agora</a>
+    </div>
+
+    <!-- Produto 2 -->
+    <div class="card">
+      <img src="URL_DA_IMAGEM" alt="Produto 2">
+      <h3>Outro Produto</h3>
+      <p>Descrição breve do produto</p>
+      <a href="SEU_LINK_AFILIADO" target="_blank">Comprar Agora</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Minha Loja de Afiliados - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    // Função de busca simples
+    document.getElementById('search').addEventListener('keyup', function () {
+      let filtro = this.value.toLowerCase();
+      let cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        let titulo = card.querySelector('h3').textContent.toLowerCase();
+        card.style.display = titulo.includes(filtro) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+
+</html>
